@@ -82,7 +82,7 @@ namespace TumblrExport
                 {
                     if (targetMediaFile.Exists)
                     {
-                        _logger.LogError($"File exists: {targetMediaFile.FullName}");
+                        _logger.LogInformation($"File exists: {targetMediaFile.FullName}");
                     }
                     else
                     {

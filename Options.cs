@@ -30,4 +30,9 @@ namespace TumblrExport
     {
         public DirectoryInfo Output { get; set; }
     }
+
+    public class MediaOptions : CommonOptions
+    {
+        public DirectoryInfo Media { get; set; }
+    }
 }

@@ -61,14 +61,24 @@ namespace TumblrExport
                 new Option<bool>(new[] { "--test", "-t" }, "Test output")
             };
 
+            var mediaOnly = new Command("mediaonly", "Copy original media (images etc) from blog")
+            {
+                new Argument<string>("blog", "Your blog."),
+                new Argument<DirectoryInfo>("media", "Output Directory for images, etc."),
+                new Option<DateTime>(new[] { "--since", "-s" }, "Only process posts newer than this date"),
+                new Option<bool>(new[] { "--test", "-t" }, "Test output")
+            };
+
             var cmd = new RootCommand
             {
                 hugo,
-                hugoPostBundle
+                hugoPostBundle,
+                mediaOnly
             };
 
             hugo.Handler = CommandHandler.Create<HugoOptions>(new HugoProcessor().Run);
             hugoPostBundle.Handler = CommandHandler.Create<HugoPageBundleOptions>(new HugoPageBundleProcessor().Run);
+            mediaOnly.Handler = CommandHandler.Create<MediaOptions>(new MediaOnlyProcessor().Run);
 
             return await cmd.InvokeAsync(args);
         }
