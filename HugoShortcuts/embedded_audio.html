@@ -1,0 +1,5 @@
+{{ $src := (.Get "src") }}
+{{ $class := (.Get "class") }}
+<iframe {{ if $class}}class="{{$class}}"{{end}} src="{{$src}}" frameborder="0" allowtransparency="true" width="100%"></iframe>
+
+ 

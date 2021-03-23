@@ -1,0 +1,44 @@
+{{ $altText := .Get "alt"}}
+{{ $caption := .Get "caption"}}
+{{ $src := .Get "src"}}
+{{ with $.Page.Resources.GetMatch (.Get "src") }}
+  {{ if in ($src) ".gif" }}
+  <img src="{{.RelPermalink}}">
+  {{ else }}
+    <figure>
+        <a href="{{.RelPermalink}}">
+            <img srcset="
+            {{ (.Resize "320x").RelPermalink }} 320w,
+            {{ (.Resize "600x").RelPermalink }} 600w,
+            {{ (.Resize "1200x").RelPermalink }} 1200w,
+            {{ (.Resize "1800x").RelPermalink }} 2x"
+            sizes="(max-width: 320px) 320w, (max-width: 600px) 600w,(max-width: 1200px) 1200w,2x"
+            src="{{ (.Resize "1200x").RelPermalink }}" alt="{{$altText}}"/>
+        </a>
+        {{ with $caption }}
+        <figcaption><h4>{{ . }}</h4></figcaption>
+        {{ end }}
+    </figure>
+    {{ end }}
+{{ else }}
+  {{ with resources.Get (.Get "src") }}
+  {{ if in ($src) ".gif" }}
+    <img src="{{.RelPermalink}}">
+    {{ else }}
+    <figure>
+        <a href="{{.RelPermalink}}">
+            <img srcset="
+            {{ (.Resize "320x").RelPermalink }} 320w,
+            {{ (.Resize "600x").RelPermalink }} 600w,
+            {{ (.Resize "1200x").RelPermalink }} 1200w,
+            {{ (.Resize "1800x").RelPermalink }} 2x"
+            sizes="(max-width: 320px) 320w, (max-width: 600px) 600w,(max-width: 1200px) 1200w,2x"
+            src="{{ (.Resize "1200x").RelPermalink }}" alt="{{$altText}}"/>
+        </a>
+        {{ with $caption }}
+        <figcaption><h4>{{ . }}</h4></figcaption>
+        {{ end }}
+    </figure>
+    {{ end }}
+  {{ end }}
+{{ end }}

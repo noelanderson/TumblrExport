@@ -1,0 +1,13 @@
+{{ $src := (.Get "src") }}
+{{ $type := (.Get "type") }}
+{{ $width := (.Get "width") }}
+{{ $height := (.Get "height") }}
+{{ $caption := (.Get "caption") }}
+{{ $poster := .Page.Resources.GetMatch (.Get "poster")}}
+<div class= "audio">
+  {{ if $poster }}<img src="{{ $poster.RelPermalink }}">{{end}}{{ if $caption }} <p>{{ $caption }}</p>{{end}}
+  <audio{{ if $width }} width="{{ $width }}"{{else}} width="100%"{{ end }}{{ if $height }} height="{{ $height }}"{{end}} controls>
+  <source src="{{ $src | relURL }}" type="{{ $type }}">
+  Your browser does not support the audio tag.
+  </audio>
+</div>
