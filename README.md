@@ -109,7 +109,7 @@ This will create markdown pages for each Tumblr post, copy over any images, and 
         ├── 300_3.jpg
         └── 300_4.jpg 
 ```
-If you wanted this as page bundles:
+**If you wanted this as page bundles:**
 ```
 TumblrExport hugopagebundle myBlog c:\hugo\myblog\content\posts -p -d -r -q -a
 ```
@@ -129,6 +129,19 @@ This will create markdown pages for each Tumblr post, copy over any images, and 
             ├── 300_2.jpg
             ├── 300_3.jpg
             └── 300_4.jpg 
+```
+**If you wanted to back up your photos since the beginning of 2021**
+```
+TumblrExport mediaonly myBlog c:\photo_backup -s 1/1/2021
+```
+This will create markdown pages for each Tumblr post, copy over any images, and create the following files:
+
+```
+└── photo_backup
+    ├── 300_1.jpg
+    ├── 300_2.jpg
+    ├── 300_3.jpg
+    └── 300_4.jpg 
 ```
 
 ## Tumblr Content Blocks
@@ -163,7 +176,7 @@ The html files to support these shortcodes are in the project **[HugoShortcuts](
 Images will be converted to the Hugo [Figure](https://gohugo.io/content-management/shortcodes/#figure) shortcut
 
 ### Video Blocks
-| vVdeo source  | In Markdown |
+| Video source  | In Markdown |
 | ------------- | ------------- |
 | youtube | hugo [youtube](https://gohugo.io/content-management/shortcodes/#youtube) shortcode  |
 | vimeo  | hugo [vimeo](https://gohugo.io/content-management/shortcodes/#vimeo) shortcode  |
@@ -179,3 +192,7 @@ The html file to support the {{video}} shortcode is the project **[HugoShortcuts
 | tumblr  | hugo {{%audio%}} shortcode, this supports the html5 audio tag |
 
 The html files to support these shortcodes are in the project **[HugoShortcuts](https://github.com/noelanderson/TumblrExport/tree/master/HugoShortcuts)** folder and should be copied to the **\\layouts\\shortcodes** folder in Hugo
+
+</br>
+## Please respect other people's content
+You can point this tool at any blog, but if the content doesn't belong to you then please don't use this tool to copy it
