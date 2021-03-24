@@ -88,9 +88,9 @@ Options:
 ## Example Usage
 To backup your Tumblr named "myBlog"
 Which contains three posts (100, 101 & 103)
-100 is just text
-200 is text and one image
-300 has four images
+- 100 is just text
+- 200 is text and one image
+- 300 has four images
 ```
 TumblrExport hugo myBlog c:\hugo\myblog\content\posts c:\hugo\myblog\content\images -p -d -r -q -a
 ```
