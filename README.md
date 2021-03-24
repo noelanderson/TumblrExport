@@ -94,7 +94,7 @@ Which contains three posts (100, 101 & 103)
 ```
 TumblrExport hugo myBlog c:\hugo\myblog\content\posts c:\hugo\myblog\content\images -p -d -r -q -a
 ```
-This will create markdown pages for each Tumblr post and copy over any images, and create the following files:
+This will create markdown pages for each Tumblr post, copy over any images, and create the following files:
 
 ```
 └── content
@@ -113,7 +113,7 @@ If you wanted this as page bundles:
 ```
 TumblrExport hugopagebundle myBlog c:\hugo\myblog\content\posts -p -d -r -q -a
 ```
-This will create markdown pages for each Tumblr post and copy over any images, and create the following files:
+This will create markdown pages for each Tumblr post, copy over any images, and create the following files:
 
 ```
 └── content
