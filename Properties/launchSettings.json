@@ -2,7 +2,7 @@
   "profiles": {
     "TumblrExport": {
       "commandName": "Project",
-      "commandLineArgs": "mediaonly mygoldenteardrops d:\\hugo\\teardrops -s 3/1/2021"
+      "commandLineArgs": "hugopagebundle  yourblog c:\\hugo\\yourblog "
     }
   }
 }
