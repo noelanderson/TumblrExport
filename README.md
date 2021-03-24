@@ -168,6 +168,7 @@ Images will be converted to the Hugo [Figure](https://gohugo.io/content-manageme
 | youtube | hugo [youtube](https://gohugo.io/content-management/shortcodes/#youtube) shortcode  |
 | vimeo  | hugo [vimeo](https://gohugo.io/content-management/shortcodes/#vimeo) shortcode  |
 | tumblr  | hugo {{%video%}} shortcode,  this supports the html5 video tag |
+
 The html file to support the {{video}} shortcode is the project **[HugoShortcuts](https://github.com/noelanderson/TumblrExport/tree/master/HugoShortcuts)** folder and should be copied to the **\\layouts\\shortcodes** folder in Hugo
 
 ### Audio Blocks
@@ -176,4 +177,5 @@ The html file to support the {{video}} shortcode is the project **[HugoShortcuts
 | spotify | hugo {{embedded_audio}} shortcode, this supports an iframe containing the providers audio player  |
 | soundcloud  | hugo {{embedded_audio}} shortcode, this supports an iframe containing the providers audio player  |
 | tumblr  | hugo {{%audio%}} shortcode, this supports the html5 audio tag |
+
 The html files to support these shortcodes are in the project **[HugoShortcuts](https://github.com/noelanderson/TumblrExport/tree/master/HugoShortcuts)** folder and should be copied to the **\\layouts\\shortcodes** folder in Hugo
