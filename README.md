@@ -130,11 +130,11 @@ This will create markdown pages for each Tumblr post, copy over any images, and 
             ├── 300_3.jpg
             └── 300_4.jpg 
 ```
-**If you wanted to back up your photos since the beginning of 2021**
+**If you just wanted to back up your photos since the beginning of 2021**
 ```
 TumblrExport mediaonly myBlog c:\photo_backup -s 1/1/2021
 ```
-This will create markdown pages for each Tumblr post, copy over any images, and create the following files:
+This will copy over any images, and create the following files:
 
 ```
 └── photo_backup
