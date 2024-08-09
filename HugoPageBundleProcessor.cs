@@ -56,12 +56,19 @@ namespace TumblrExport
                 Post post = jsonPost.ToObject<Post>();
                 post.Process();
 
-                // Create the Markdown File - targetDir/postname/index.md
-                FileInfo targetMarkdownFile = new FileInfo(Path.Combine(targetDirectory.FullName, post.PostName, "index.md"));
+                // Create the Bundle sub directory - targetDir/postname
+                DirectoryInfo targetBundleDirectory = new DirectoryInfo(Path.Combine(targetDirectory.FullName, post.PostName));
+                if (!options.Test)
+                {
+                    targetBundleDirectory?.Create();
+                }
+
+                // Create the Markdown File - targetBundleDirectory/index.md
+                FileInfo targetMarkdownFile = new FileInfo(Path.Combine(targetBundleDirectory.FullName, "index.md"));
                 fileFailures += CreateMarkDownFile(targetMarkdownFile, post.ToHugoMarkdown(), options.Test);
 
-                // Copy any Media files needed for this post - targetDir/postname/
-                countCopyFailures += await CopyFiles(post.CopyList, Path.Combine(targetDirectory.FullName, post.PostName), options.Test);
+                // Copy any Media files needed for this post - targetBundleDirectory/
+                countCopyFailures += await CopyFiles(post.CopyList, targetBundleDirectory.FullName, options.Test);
             }
 
             stopWatch.Stop();
