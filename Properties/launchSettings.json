@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "TumblrExport": {
-      "commandName": "Project",
-      "commandLineArgs": "hugopagebundle  yourblog c:\\hugo\\yourblog "
-    }
-  }
-}
